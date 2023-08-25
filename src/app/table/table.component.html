@@ -1,0 +1,16 @@
+<div class="container" *ngIf="!(tableService.isLoading$ | async); else loading">
+  <div class="post-wrapper">
+    <div class="post-group" *ngFor="let postsGroup of result" appPostColor>
+      <p class="post-group-user">User{{ postsGroup[firstUser].userId }}:</p>
+      <app-post
+        *ngFor="let post of postsGroup; let index = index"
+        [post]="post"
+        [index]="index"
+      ></app-post>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="cssload-speeding-wheel"></div>
+</ng-template>
+

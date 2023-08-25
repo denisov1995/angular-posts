@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <div class="auth">
+        <button
+          class="auth__btn"
+          *ngIf="authService.isLogin | async"
+          (click)="authService.logout()"
+        >
+          Logout
+        </button>
+        <div class="auth__user-field">
+          <p>{{ authService.userNameView }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

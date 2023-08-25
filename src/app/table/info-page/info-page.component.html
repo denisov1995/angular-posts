@@ -1,0 +1,17 @@
+<div class="container" *ngIf="!(tableService.isLoading$ | async); else loading">
+  <div class="info">
+    <button class="info__button" (click)="goBack()">
+      <img src="assets/arrow.png" alt="#" />
+    </button>
+    <div class="info__text-container">
+      <h1 class="info__title">{{ post?.title }}</h1>
+      <h3 class="info__description">Description:</h3>
+      <p class="info__description-text">{{ post?.body }}</p>
+      <div class="info__footer"></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="cssload-speeding-wheel"></div>
+</ng-template>
